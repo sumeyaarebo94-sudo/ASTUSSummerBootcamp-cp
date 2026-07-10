@@ -1,22 +1,12 @@
-def solve():
-    t = int(input()) 
-    for _ in range(t):
-        n = int(input())  
-        arr = list(map(int, input().split()))
+t = int(input())
 
-    
-        firstOne = -1
-        
-        lastZero = -1
+for i in range(t):
+    n = int(input())
+    a = list(map(int, input().split()))
+    count = 0
 
-        for i in range(n):
-            if arr[i] == 1 and firstOne == -1:
-                firstOne = i
-            if arr[i] == 0:
-                lastZero = i
+    for j in range(n - 1):
+        if a[j] == 1 and a[j + 1] == 0:
+            count += 1
 
-        
-        if firstOne != -1 and lastZero != -1 and firstOne < lastZero:
-            print(1)
-        else:
-            print(0)
+    print(count)
